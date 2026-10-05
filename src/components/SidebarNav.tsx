@@ -1,6 +1,4 @@
 import { Fragment } from "react";
-import { SidebarItemProps } from "../structs/SidebarItemProps";
-import { SidebarMenuProps } from "../structs/SidebarMenuProps";
 import { SidebarItem } from "./SidebarItem";
 import { SidebarMenu } from "./SidebarMenu";
 import { SidebarNavItemsProps } from "../structs/SidebarNavItemsProps";

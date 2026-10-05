@@ -4,12 +4,12 @@ export { SidebarMenu } from "./components/SidebarMenu";
 export { SidebarItem } from "./components/SidebarItem";
 export { SidebarIcon } from "./components/SidebarIcon";
 
-// Types (will be moved to src/types/ in Phase 4)
+// Types (public API)
 export type { SidebarProps } from "./structs/SidebarProps";
 export type { SidebarMenuProps } from "./structs/SidebarMenuProps";
 export type { SidebarItemProps } from "./structs/SidebarItemProps";
 export type { SidebarIconProps } from "./structs/SidebarIconProps";
-export type { SidebarTemplateProps } from "./structs/SidebarTemplateProps";
 export type { HeaderSlotProps, FooterSlotProps } from "./structs/SidebarSlotProps";
 export type { SidebarTemplate } from "./enums/SidebarTemplate";
 export type { SidebarPosition } from "./enums/SidebarPosition";
+export type { SidebarIconType } from "./enums/SidebarIconType";

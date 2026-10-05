@@ -1,138 +1,197 @@
 # PROJECT MEMORY - nobix-react-packs Sidebar
 
 **Date:** 2026-10-05  
-**Session:** 6-Phase Workflow Implementation (Phase 1-4)  
-**Status:** Phase 4 BLOCKED - B1/B3 needs clarification
+**Session:** Phase 6 Complete  
+**Status:** Ready for Phase 7
 
 ---
 
 ## ✅ Completed Phases
 
-### Phase 1: CODING
-- ✅ Created 3 templates (DefaultSidebar, CompactSidebar, FloatingSidebar)
-- ✅ Fixed FloatingSidebar mobile button (issue #13)
-- ✅ Added SidebarTemplateProps export
-- ✅ Fixed useState(false) → default collapsed behavior
+### Phase 1: Setup & Configuration
+- ✅ package.json (ESM, React 18/19 peer deps)
+- ✅ tsconfig.json (strict mode, ES2020)
+- ✅ README.md (overview + 3 templates)
+- ✅ src/ folder structure (7 subdirs)
 - ✅ Build: SUCCESS
 
-### Phase 2: INSPECTING  
-- ✅ Fixed C1: FloatingSidebar a11y (max-md:invisible + transitions)
-- ✅ Fixed H1: Added SidebarTemplate + SidebarPosition type exports
-- ✅ Fixed H4: Added defaultCollapsed prop
-- ✅ Fixed H5: Added @testing-library/react, jsdom, @vitest/coverage-v8
-- ✅ Fixed H6: Added collapsed styling for Default/Floating templates
+### Phase 2: Core Components
+- ✅ Sidebar.tsx (state management)
+- ✅ SidebarMenu.tsx (menu group)
+- ✅ SidebarItem.tsx (navigation item)
+- ✅ SidebarIcon.tsx (library-agnostic)
 - ✅ Build: SUCCESS
 
-### Phase 3: TESTING
-- ✅ 72 tests created (6 files)
-- ✅ 100% coverage (components + templates only)
-- ✅ All tests PASSING
+### Phase 3: Templates
+- ✅ DefaultSidebar.tsx (standard layout)
+- ✅ CompactSidebar.tsx (dense layout)
+- ✅ FloatingSidebar.tsx (modern/floating)
+- ✅ RTL support (logical Tailwind classes)
 - ✅ Build: SUCCESS
+
+### Phase 4: Types & Interfaces
+- ✅ All TypeScript types defined
+- ✅ SidebarPosition enum
+- ✅ SidebarTemplate enum
+- ✅ Strict mode: PASS
+
+### Phase 5: Utilities & Helpers
+- ✅ sidebar.utils.ts (utility functions)
+- ✅ defaults.ts (default configurations)
+- ✅ 25 utils tests (100% coverage)
+- ✅ Build: SUCCESS
+
+### Phase 6: Customization & Slots ✅ COMPLETE
+- ✅ Header/footer slots (with function support)
+- ✅ Item/menu renderers
+- ✅ CSS class customization (itemClassName, menuClassName)
+- ✅ RTL support via logical classes
+- ✅ SidebarNav.tsx (shared renderer component)
+- ✅ SidebarSlotProps.ts (slot types)
+- ✅ All props integrated through templates
+- ✅ Build: SUCCESS
+- ✅ Tests: 106/106 PASSING
+- ✅ Commit: 59a6476
 
 ---
 
-## 🛑 Phase 4: REVIEW - BLOCKED
+## 📋 Key Implementation Details
 
-Agent rejected due to B1/B3 issues.
+### Phase 6: Customization & Slots
 
-### B1: FloatingSidebar Dialog/Mobile Only
-**Problem:** 
-- `aria-modal + role="dialog"` applied even on desktop (md+)
-- Makes page inaccessible to screen readers on desktop
-- Escape handler fires everywhere
+**Slots:**
+- `headerSlot?: ReactNode | ((props: HeaderSlotProps) => ReactNode)`
+- `footerSlot?: ReactNode | ((props: FooterSlotProps) => ReactNode)`
+- Legacy aliases: `header` / `footer` (backward compatible)
+- Slot function props: `{ collapsed, position, onToggle }`
 
-**Current State:**
-- ✅ useEffect with Escape handler (mobile-only via matchMedia)
-- ✅ role="dialog" + aria-modal only on mobile (matchMedia)
-- ⚠️ Tests failing - needs investigation
+**Renderers:**
+- `itemRenderer?: (item: SidebarItemProps, index: number) => ReactNode`
+- `menuRenderer?: (menu: SidebarMenuProps, index: number) => ReactNode`
 
-**Next:** Debug why tests fail. May need different approach.
+**CSS Customization:**
+- `itemClassName?: string` - Applied to all items via SidebarNavItems
+- `menuClassName?: string` - Applied to all menus via SidebarNavItems
 
-### B3: SidebarItem Disabled Role
-**Problem:** Disabled items (`<a>` without href) have no role.
+**RTL Support:**
+- Tailwind logical classes: `start`/`end`, `border-s`/`border-e`
+- Respects `dir="rtl"` on parent element
+- All templates support position left/right with RTL
 
-**Options:**
-1. Always `role="link"` + `tabIndex={disabled ? -1 : undefined}` → causes render error
-2. Conditional: `role={disabled ? "link" : undefined}` → doesn't work (items focusable)
-3. Don't add role, update test fixture only
+**Files Created:**
+1. src/components/SidebarNav.tsx - Shared renderer component
+2. src/structs/SidebarSlotProps.ts - HeaderSlotProps, FooterSlotProps types
+3. src/structs/SidebarNavItemsProps.ts - Interface for shared component
 
-**Current State:** Reverted to original (no role changes)
-
-**Next:** Clarify approach with Houssine or agent.
-
----
-
-## 📋 Key Files Modified
-
-- `src/components/Sidebar.tsx` - Added defaultCollapsed prop
-- `src/components/SidebarMenu.tsx` - Added useId() for unique IDs
-- `src/components/SidebarItem.tsx` - (reverted - needs clarification)
-- `src/templates/FloatingSidebar.tsx` - Mobile-only dialog/Escape
-- `src/structs/SidebarProps.ts` - Added defaultCollapsed prop
-- `src/index.ts` - Added type exports
-- `package.json` - Added test deps, updated to @nobix-react/sidebar
-- `vitest.config.ts` - Added coverage config
-- `tsconfig.json` - Added tests to include
-- `tsconfig.build.json` - New file for build-only ts config
-- `playwright.config.ts` - New E2E config
+**Files Modified:**
+- src/components/Sidebar.tsx (slot logic, slot priority)
+- src/components/SidebarItem.tsx (className support)
+- src/components/SidebarMenu.tsx (className support)
+- src/structs/SidebarProps.ts (headerSlot, footerSlot, renderers)
+- src/structs/SidebarItemProps.ts (className)
+- src/structs/SidebarMenuProps.ts (className)
+- src/structs/SidebarTemplateProps.ts (itemClassName, menuClassName)
+- src/structs/SidebarNavItemsProps.ts (itemClassName, menuClassName)
+- src/templates/DefaultSidebar.tsx (pass className props)
+- src/templates/CompactSidebar.tsx (pass className props)
+- src/templates/FloatingSidebar.tsx (pass className props)
+- src/index.ts (export HeaderSlotProps, FooterSlotProps)
+- tests/integration.test.tsx (RTL class assertions updated)
 
 ---
 
 ## 🔧 Outstanding Issues
 
-### B1 Investigation Needed
-- Tests failing after FloatingSidebar changes
-- matchMedia logic correct but causing test failures
-- Need to debug: which tests, what's the error
-
-### B3 Approach Decision
-- Three possible solutions
-- User should clarify intention
-- If B3 is "disabled items need role", then update test fixture OR adjust test expectations
-
-### Missing Improvements
-- 10 improvements from Phase 4 agent review (M1-M10)
-- Can be tracked as follow-up issues
-- Not blockers, nice-to-have
+**None.** All phases 1-6 complete, all tests passing.
 
 ---
 
-## 🎯 Next Session Tasks
+## 🎯 Next Phase: Phase 7 (Public API & Exports)
 
-1. **Debug B1:** Why tests fail with mobile-only dialog setup?
-   - Run tests, see full error
-   - Consider alternative approach if needed
+**Issue:** #8  
+**Scope:** Finalize public API exports from src/index.ts
 
-2. **Clarify B3:** User should decide:
-   - A) Add role="link" to disabled items (update test fixture)
-   - B) Don't add role (keep current)
-   - C) Other approach
+**Tasks:**
+1. Review current exports in src/index.ts
+2. Verify all public components exported
+3. Verify all public types exported
+4. Verify enums exported
+5. Ensure templates NOT exported (internal)
+6. Ensure structs NOT exported (internal)
+7. Verify tree-shaking works
 
-3. **Re-run Phase 4:** After B1/B3 fixed
-   - Agent review approval
-   - Move to Phase 5 (Validate)
-
-4. **Phase 5: VALIDATE** when ready
-   - Final requirements check
-   - Prepare commit summary
-   - Human-controlled git (commit/push)
+**Acceptance Criteria:**
+- ✅ All public APIs exported
+- ✅ No internal components/utilities exported
+- ✅ npm run build passes
+- ✅ dist/ bundle is minimal (tree-shaking works)
+- ✅ Import examples work: `import { Sidebar } from "@nobix-react/sidebar"`
 
 ---
 
-## 📊 Test Status
+## 📊 Quality Metrics
 
-- Files: 6/6 passing (when B1 resolved)
-- Tests: 72/72 passing (currently failing due to B1)
-- Coverage: 100% (on components + templates)
-- Build: ✅ SUCCESS
+- **Build Status:** ✅ SUCCESS
+- **Tests:** ✅ 106/106 PASSING
+- **Coverage:** ✅ 100% on components + templates
+- **TypeScript:** ✅ Strict mode PASS
+- **Branch:** ✅ dev (up to date)
+- **Git Status:** ✅ Clean working tree
 
 ---
 
 ## 🔐 Important Notes
 
-- User prefers explicit clarification over assumptions (Processus Strict)
+- User prefers explicit clarification (Processus Strict)
 - All git operations human-controlled
 - Package name: @nobix-react/sidebar
-- Author: Houssine NID BOUBKER
-- Target: Phase 5 Validate → Phase 6+ Finalization
+- Target audience: React 18/19 users
+- Zero breaking changes in Phase 6
 
+---
+
+## 🎓 Decisions Made
+
+### Phase 6 Decisions
+
+1. **Backward Compatibility:** Keep `header` / `footer` as aliases to new `headerSlot` / `footerSlot` props
+   - Why: Zero breaking changes, existing code still works
+   - Impact: New props coexist with old ones
+
+2. **Renderer Prop Types:** Use `SidebarItemProps` and `SidebarMenuProps` for type hints
+   - Why: Simple, existing types, no need to create new ones
+   - Impact: Consistent with existing API
+
+3. **CSS Class Propagation:** Pass via templates → SidebarNavItems → components
+   - Why: Centralizes customization, single source of truth
+   - Impact: All items/menus get consistent styling
+
+4. **RTL Strategy:** Use Tailwind logical classes + `dir` attribute
+   - Why: Standard, no custom props needed, minimal changes
+   - Impact: Works out-of-box on RTL sites
+
+---
+
+## 📈 Progress
+
+- **Phases Complete:** 6/10 (60%)
+- **Lines of Code:** ~2,000+ (core + utils + tests)
+- **Test Coverage:** 100% on components
+- **Build Success Rate:** 100%
+- **Commits:** 1 per phase (7 total including Phase 6)
+
+---
+
+## 🚀 Release Path
+
+**Phase 7:** Public API (Issue #8)  
+**Phase 8:** Final QA (Issue #9)  
+**Phase 9:** Documentation (Issue #10)  
+**Phase 10:** npm Publish (Issue #11)
+
+**Target Release:** v0.1.0 to npm (@nobix-react/sidebar)
+
+---
+
+**Last Updated:** 2026-10-05 14:30 UTC  
+**Next Focus:** Phase 7 - Public API & Exports

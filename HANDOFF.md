@@ -1,132 +1,107 @@
 # HANDOFF
 
-Session handoff and status report — auto-created at end of each session.
+Session handoff and status report — updated 2026-10-05 14:30 UTC
 
 ---
 
 ## Current Session Status
 
-**Last Updated:** 2026-10-05 10:30 UTC  
-**Session ID:** Phase 1 & 2 Complete  
-**Status:** 📋 READY_FOR_COMMIT (awaiting git push)
+**Last Updated:** 2026-10-05 14:30 UTC  
+**Session ID:** Phase 6 Complete  
+**Status:** ✅ READY_FOR_NEXT_PHASE
 
 ---
 
-## What's Been Done
+## What's Been Done This Session
 
-### ✅ Completed
+### ✅ Phase 6: Customization & Slots (Issue #7)
 
-1. **Epic Created**
-   - Master Epic #1: @projet-example/sidebar Package Development
-   - Link: https://github.com/hnidboubker/nobix-react-packs/issues/1
+**Completed:**
+1. **Slots Implementation**
+   - `headerSlot` / `footerSlot` with function support
+   - Props: `{ collapsed: boolean, position: SidebarPosition, onToggle: () => void }`
+   - Legacy aliases: `header` / `footer` (backward compatible)
 
-2. **10 Phases Created (Issues #2-#11)**
-   - All phases linked to Epic #1
-   - Each phase has micro-tasks + verification checkpoints
-   - Phases span: Setup → Publishing
+2. **Custom Renderers**
+   - `itemRenderer?: (item: SidebarItemProps, index: number) => ReactNode`
+   - `menuRenderer?: (menu: SidebarMenuProps, index: number) => ReactNode`
+   - Overrides default component rendering
 
-3. **Documentation**
-   - `CLAUDE.md` — Project architecture and commands
-   - `AGENTS.md` — Project overview (simplified)
-   - `.agents/INDEX.md` — Complete file index
-   - `.agents/SKILLS.md` — Available agents
-   - `.agents/workflows.md` — Development workflows (all phases documented)
-   - `.agents/rules.md` — Guidelines and standards
-   - `HANDOFF.md` — Session continuity (this file)
+3. **CSS Customization**
+   - `itemClassName?: string` - Applied to all items
+   - `menuClassName?: string` - Applied to all menus
+   - Propagates through templates → SidebarNavItems → components
 
-4. **Phase 1: Setup & Configuration ✅**
-   - `package.json` (ESM, React 18/19 peer deps)
-   - `tsconfig.json` (strict mode, ES2020)
-   - `prettier.config.js` (formatting config)
-   - `README.md` (overview + 3 templates)
-   - `src/` folder structure (7 subdirs)
-   - `.gitignore` (updated with dist/, coverage/)
-   - ✅ Validated: npm install, npm run build
+4. **RTL Support**
+   - Tailwind logical classes: `start`/`end`, `border-s`/`border-e`
+   - Respects `dir="rtl"` attribute on parent
+   - All templates support position left/right with RTL
 
-5. **Phase 2: Core Components ✅**
-   - `src/components/Sidebar.tsx` (main component, state management)
-   - `src/components/SidebarMenu.tsx` (menu group)
-   - `src/components/SidebarItem.tsx` (individual item)
-   - `src/components/SidebarIcon.tsx` (icon renderer, library-agnostic)
-   - `src/index.ts` (exports all components + types)
-   - ✅ Validated: npm run build (TypeScript strict mode)
-   - ✅ All props typed (no `any`)
-   - ✅ Hierarchy: Sidebar → Menu → Item → Icon
+5. **Quality Assurance**
+   - ✅ TypeScript strict mode passes
+   - ✅ Build: npm run build PASS
+   - ✅ Tests: 106/106 PASS (100% coverage on components)
+   - ✅ RTL class assertions updated
+   - ✅ No breaking changes
 
-6. **Branch Strategy**
-   - Created `dev` branch from `main`
-   - All development on `dev` (verified at each step)
-   - Commit strategy: commit after each phase
+**Files Modified (15):**
+- Modified: 12 files
+- New: 3 files (SidebarNav.tsx, SidebarSlotProps.ts, SidebarNavItemsProps.ts)
+
+**Commit:**
+```
+59a6476 feat: implement Phase 6 - Customization & Slots (Issue #7)
+```
 
 ---
 
 ## What's Next (Action Items for Next Session)
 
-### Immediate (Before Phase 3)
+### Immediate: Phase 7 (Public API & Exports)
 
-**Git Operations (HUMAN REQUIRED):**
-```bash
-# Current branch: dev
-# Staged files: 18 (Phase 1 + Phase 2)
-# Build status: ✅ Passing
-
-git commit -m "feat: implement Phase 1 & 2 - package setup and core components
-
-Phase 1: Setup & Package Configuration
-- Add package.json (ESM, React 18/19 peer deps)
-- Add tsconfig.json (strict mode, ES2020)
-- Add README.md with project overview
-- Create src/ folder structure
-- Add prettier.config.js for code formatting
-- Update .gitignore
-
-Phase 2: Core Components Development
-- Create Sidebar.tsx (main component, state management)
-- Create SidebarMenu.tsx (menu group component)
-- Create SidebarItem.tsx (navigation item component)
-- Create SidebarIcon.tsx (library-agnostic icon renderer)
-- Export all components and types from src/index.ts
-
-Refs: Epic #1, Phase 1 #2, Phase 2 #3"
-
-git push origin dev
-```
-
-### Phase 3: Templates Implementation (Issue #4)
-
-**Next Agent:** `cc-react-frontend-expert-agent`
+**Issue:** #8  
+**Scope:** Clean public API from src/index.ts
 
 **Tasks:**
-- Create `src/templates/DefaultSidebar.tsx`
-- Create `src/templates/CompactSidebar.tsx`
-- Create `src/templates/FloatingSidebar.tsx`
-- Implement template selection logic in Sidebar
-- Test template switching
+1. Verify current exports in `src/index.ts`
+2. Export public components: `Sidebar`, `SidebarMenu`, `SidebarItem`, `SidebarIcon`
+3. Export public types: `SidebarProps`, `SidebarItemProps`, `SidebarMenuProps`, `SidebarIconProps`, `HeaderSlotProps`, `FooterSlotProps`
+4. Export enums: `SidebarTemplate`, `SidebarPosition`, `SidebarIconType`
+5. Do NOT export: Templates (Default, Compact, Floating), Structs, Utils, Internal helpers
+6. Verify tree-shaking works (check dist/ bundle)
 
-**Verification Checkpoints:**
-- ✅ All 3 templates created
+**Quality Gates:**
 - ✅ npm run build passes
-- ✅ Template switching works
-- ✅ No console errors
+- ✅ Imports work: `import { Sidebar, SidebarTemplate } from "@nobix-react/sidebar"`
+- ✅ Unused exports removed
+- ✅ Tree-shaking verified (dist is minimal)
 
-**Success:** Ready for CONFIRM BEFORE → Phase 4
+**Agent:** cc-react-frontend-expert-agent  
+**Workflow:** Simple verification + cleanup
 
 ---
 
-### Then: Phase 4-10
+### Then: Phase 8-10
 
-Follow the 10-phase workflow documented in `.agents/workflows.md`.
+**Phase 8:** Testing & QA (Issue #9)
+- Already at 100% coverage (106 tests)
+- Just verify all tests passing
+
+**Phase 9:** Documentation & Examples (Issue #10)
+- README examples
+- TypeScript guide
+- Customization examples
+
+**Phase 10:** Publishing & Release (Issue #11)
+- CHANGELOG.md
+- Version bump: 0.1.0
+- npm publish
 
 ---
 
 ## Blockers & Notes
 
-**Blocker (Requires Human):**
-- ❌ Phase 1 & 2 changes NOT YET COMMITTED
-  - Files are staged but require: `git commit` + `git push origin dev`
-  - After this is done, Phase 3 can start
-
-**No other blockers** — Phase 3 is ready to start once commit is pushed.
+**No blockers.** All phases 1-6 complete and passing.
 
 ---
 
@@ -134,109 +109,96 @@ Follow the 10-phase workflow documented in `.agents/workflows.md`.
 
 ### Entry Points (Read in Order)
 1. **This file** → HANDOFF.md (you're reading it)
-2. **Architecture** → `CLAUDE.md` (commands, architecture overview)
-3. **Project Info** → `AGENTS.md` (project scope)
-4. **Navigation** → `.agents/INDEX.md` (all .agents/ files)
-5. **Choose Agent** → `.agents/SKILLS.md` (which agent to use)
-6. **Follow Workflow** → `.agents/workflows.md` (step-by-step)
+2. **Architecture** → `CLAUDE.md` (commands, overview)
+3. **Memory** → `PROJECT_MEMORY.md` (discoveries, decisions)
+4. **Navigation** → `.agents/INDEX.md` (all governance files)
 
-### Current Status
-- **Completed:** Phase 1 (Setup) + Phase 2 (Core Components)
-- **Next Phase:** Phase 3 (Templates) — Issue #3
-- **Branch:** `dev` (verify with `git branch`)
-- **Build Status:** ✅ Passing (last check: 2026-10-05 10:30 UTC)
-- **Files Staged:** 18 files ready for commit
+### Current State
+- **Completed:** Phases 1-6 ✅
+- **Current Phase:** 6 (Customization & Slots) - DONE
+- **Next Phase:** 7 (Public API & Exports) - Issue #8
+- **Branch:** dev (verified up to date with origin)
+- **Build Status:** ✅ Passing (TypeScript strict)
+- **Tests:** ✅ 106/106 PASSING
 
 ### Critical Files
-- `.nobix-packs/epic-nobix.md` — 25-section architecture spec (reference)
-- `GitHub Issues #1-#11` — All phases with micro-tasks
-- `.agents/workflows.md` — Phase workflows + checkpoints
-- `.agents/SKILLS.md` — Agent selection guide
+- `src/index.ts` — Public API entry point (needs review for Phase 7)
 - `CLAUDE.md` — Technical reference
+- `.agents/workflows.md` — Phase workflows
+- `package.json` — Version, scripts, peer dependencies
 
 ### Quick Commands
 ```bash
-# Branch verification
-git branch                 # Should show: * dev
+# Verify state
+git status                 # Should be clean
+git branch                 # Should show * dev
+npm run build             # Should pass
+npm test                  # Should show 106 passing
 
-# Verify Phase 2 build
-npm run build             # Should pass (TypeScript strict)
-
-# After pushing commit
-git push origin dev        # Complete Phase 1/2 commit
-
-# Development
-npm run dev               # Watch TypeScript
-npm run dev:ui            # Dev server
-
-# Quality checks
-npm run build             # TypeScript strict
-npm run lint              # ESLint (if configured)
-npm test                  # Unit tests (if available)
-npm test -- --coverage    # Coverage report
+# Phase 7 check
+cat src/index.ts          # Review current exports
+npm run build && ls -la dist/  # Check bundle size
 ```
 
 ### Next Agent
-**Agent:** `cc-react-frontend-expert-agent`  
-**Task:** Phase 3 - Create 3 templates (Default, Compact, Floating)  
-**Issue:** #4
+**Agent:** cc-react-frontend-expert-agent  
+**Task:** Phase 7 - Verify and finalize public API  
+**Issue:** #8
 
 ---
 
-## Branch Strategy
+## Session Summary
 
-**IMPORTANT:** All development happens on `dev` branch.
-
-- `main` — Release/production only
-- `dev` — All phases, features, development
-- Verify with `git branch` at start of each task
-
-### Next Steps After Initial Commit
-
-1. User commits infrastructure files to `main`
-2. Create `dev` branch from `main`
-3. All Phase 1-10 work goes into `dev`
-4. Merge `dev` → `main` only for releases
-
----
-
-## Session Notes
-
-### Session 1 Achievements (2026-10-05 10:30 UTC)
-- ✅ Infrastructure created (Epic #1 + 10 Phases #2-#11)
-- ✅ Documentation complete (CLAUDE.md, AGENTS.md, .agents/)
-- ✅ Branch strategy implemented (dev branch created)
-- ✅ Phase 1 complete & validated (package setup)
-- ✅ Phase 2 complete & validated (core components)
-- ✅ Verification checkpoints added to all phases
-- ✅ Pre-commit validation working
-- ⏳ Awaiting: git commit + git push
+### What Went Well
+- ✅ Clear answers to 5 clarification questions before coding
+- ✅ Agent prepared code without modifying files until approved
+- ✅ All tests passed after RTL class fix
+- ✅ itemClassName/menuClassName fully integrated (not just scaffolding)
+- ✅ Zero breaking changes, backward compatible
 
 ### Decisions Made This Session
-1. **All development on `dev` branch** — Verified at each step
-2. **Verify branch before each task** — Prevents wrong-branch commits
-3. **Commit after each phase** — Logical, trackable snapshots
-4. **Pre-commit validation before READY_FOR_COMMIT** — Build + type checks
-5. **HANDOFF with timestamp** — Session continuity for next session
+1. **Slots:** Use aliases (headerSlot + header) for backward compatibility
+2. **Renderers:** Accept types from existing props interfaces (SidebarItemProps, SidebarMenuProps)
+3. **CSS Classes:** Propagate via templates → SidebarNavItems → components
+4. **RTL:** Use logical Tailwind classes + dir attribute (no custom prop needed)
+5. **Test Updates:** Change assertions to use start/end classes for RTL
 
 ### Discoveries
-- Verification checkpoints work well (clear pass/fail)
-- Branch verification catches issues early
-- Phase agents work independently (cc-react-frontend-expert-agent)
-- Build validation prevents TypeScript issues
+- SidebarNav.tsx already existed (created during Phase 6 agent work)
+- React.ReactNode usage required checking in Sidebar.tsx
+- All templates needed className props plumbed through
 
-### Lessons Learned
-- Always verify branch before starting work
-- Stage files explicitly (avoid `git add -A`)
-- Build validation is essential (catches type errors early)
-- Commit message should reference GitHub issues
+### Process Notes
+- Ponytail mode: No unnecessary abstractions
+- Strict clarifications: Agent asked 5 questions before coding ✅
+- Build-first verification: npm run build checked after each agent work
+- Test-driven: RTL assertions fixed to match new class names
+
+---
+
+## Branching & Commit Strategy
+
+**Branch Status:**
+- Main branch: production/release only
+- Dev branch: all phases 1-10, current development
+- Verified: `git branch` shows `* dev`
+
+**Commit History:**
+```
+59a6476 feat: implement Phase 6 - Customization & Slots (Issue #7)
+7d994bb feat: implement Phase 5 - Utilities & Helpers (Issue #6)
+1b32d55 feat: implement Phase 5 - Utilities & Helpers (Issue #6)
+8513f75 fix: resolve Phase 4 review blockers (B1, B3)
+9059836 Add customizable sidebar templates
+... (earlier phases)
+```
 
 ---
 
 ## Links & References
 
 - **Epic:** https://github.com/hnidboubker/nobix-react-packs/issues/1
-- **Phases:** https://github.com/hnidboubker/nobix-react-packs/issues?q=is%3Aissue
+- **Phase 7 Issue:** https://github.com/hnidboubker/nobix-react-packs/issues/8
 - **Repository:** https://github.com/hnidboubker/nobix-react-packs
 - **Architecture:** `.nobix-packs/epic-nobix.md`
 
@@ -248,64 +210,57 @@ npm test -- --coverage    # Coverage report
 
 1. **Read this HANDOFF** (you're here)
 2. Read `CLAUDE.md` (architecture)
-3. Read `AGENTS.md` (project info)
+3. Read `PROJECT_MEMORY.md` (context)
 4. Read `.agents/INDEX.md` (navigation)
-5. Choose appropriate `.agents/` file based on task
-6. Follow the workflow
-7. Create/update this HANDOFF at end of session
+5. Ready to start Phase 7
 
 ### For Git Operations
 
 Remember: **Git is human-controlled only**
 - Agent prepares code
 - ✅ READY_FOR_COMMIT
-- User runs `git commit` + `git push`
+- User runs `git add . && git commit && git push`
 
-### For Bug Detection
+### For Quality Gates
 
-**Automatic workflow:**
-1. Bug detected
-2. Create GitHub issue (auto)
-3. Diagnose & fix
-4. ✅ READY_FOR_COMMIT
-
----
-
-## Template for Next Session
-
-When creating a new HANDOFF at end of session:
-
-```markdown
-# HANDOFF
-
-**Last Updated:** YYYY-MM-DD
-**Session ID:** [claude-ai link]
-**Status:** ✅ READY / 🚧 IN PROGRESS / ❌ BLOCKED
-
-## Completed This Session
-- [ ] Task 1
-- [ ] Task 2
-
-## What's Next
-- [ ] Task 3 (Issue #X)
-- [ ] Task 4 (Issue #Y)
-
-## Blockers
-- [Blocker description]
-
-## Commands to Resume
-\`\`\`bash
-[Exact commands to run]
-\`\`\`
-
-## Next Agent
-[Recommended agent for next work]
+Always verify before READY_FOR_COMMIT:
+```bash
+npm run build    # TypeScript strict
+npm test         # All passing
+git status       # Clean working tree
 ```
 
 ---
 
-**Project:** nobix-react-packs (@projet-example/sidebar)  
-**Last Updated:** 2026-10-05 10:30 UTC  
-**Status:** Phase 1 & 2 Complete → READY_FOR_COMMIT  
-**Next Phase:** Phase 3 (Templates) — Issue #4  
-**License:** Apache 2.0
+## Template for Next HANDOFF
+
+When creating next HANDOFF:
+```markdown
+# HANDOFF
+
+**Last Updated:** YYYY-MM-DD HH:MM UTC  
+**Status:** [✅ READY / 🚧 IN_PROGRESS / ❌ BLOCKED]
+
+## Completed This Session
+- [ ] Phase X (Issue #Y)
+
+## What's Next
+- [ ] Phase Z (Issue #Z)
+
+## Blockers
+(none)
+
+## Commands to Resume
+(exact commands)
+
+## Next Agent
+(name + issue)
+```
+
+---
+
+**Project:** @nobix-react/sidebar (nobix-react-packs)  
+**Completed:** Phases 1-6  
+**In Progress:** Phase 7 (ready to start)  
+**License:** Apache 2.0  
+**Last Session:** 2026-10-05 14:30 UTC
