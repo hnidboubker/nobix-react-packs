@@ -1,9 +1,12 @@
 import type { SidebarTemplate } from "../enums/SidebarTemplate";
 import type { SidebarPosition } from "../enums/SidebarPosition";
 
+export const TEMPLATES = ["default", "compact", "floating"] as const;
+
 export function getSidebarTemplate(template?: string): SidebarTemplate {
-  if (template === "compact") return "compact";
-  if (template === "floating") return "floating";
+  if (template && (TEMPLATES as readonly string[]).includes(template)) {
+    return template as SidebarTemplate;
+  }
   return "default";
 }
 
@@ -15,8 +18,14 @@ export function createSidebarClasses(
 ): string {
   const base = "flex shrink-0 flex-col overflow-hidden rounded-2xl border border-white/40 bg-white/60 shadow-xl shadow-slate-900/10 ring-1 ring-black/5 backdrop-blur-lg transition-all duration-300";
 
-  const width = collapsed ? "w-20" : "w-64";
-  const posClass = position === "right" ? "order-last" : "";
+  let width: string;
+  if (template === "floating") {
+    width = collapsed ? "w-64 md:w-20" : "w-64 md:w-72";
+  } else {
+    width = collapsed ? "w-20" : "w-64";
+  }
+
+  const posClass = position === "right" && template !== "floating" ? "order-last" : "";
   const custom = customClass || "";
 
   return [base, width, posClass, custom].filter(Boolean).join(" ");

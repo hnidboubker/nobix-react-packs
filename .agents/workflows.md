@@ -135,26 +135,17 @@ Agent: Ready to start Phase 5
 
 ---
 
-### Phase 5: Utilities & Helpers (Issue #6)
+### Phase 5: Utilities & Helpers (Issue #6) — DEFERRED
 
-**Goal:** Create utility functions and default configs
+**Status:** Deferred/Not Implemented (YAGNI principle)
 
-**Files:**
-- `src/structs/sidebar.struct.ts` (defaults)
-- `src/utils/sidebar.utils.ts` (helpers)
+**Reason:** Phase 5 attempted to create utility helpers, but code review (Phase 4) found:
+- No components used the helpers (dead code)
+- Templates already inline their class strings with minor variations
+- Refactoring templates to use helpers would add unnecessary coupling
+- YAGNI: defer until a real need emerges
 
-**Functions:**
-- `getSidebarTemplate()`
-- `createSidebarClasses()`
-- `isItemDisabled()`
-- Navigation state helpers
-
-**Verification Checkpoints:**
-- ✅ All utilities created
-- ✅ Functions tested
-- ✅ Defaults working
-- ✅ No errors
-- ✅ Utils are reusable
+**Decision:** Keep Phase 1-4 complete. Phase 5 remains open if utilities are needed later.
 
 **Agent:** cc-react-frontend-expert-agent  
 **Output:** All utilities tested and working

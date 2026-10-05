@@ -9,7 +9,6 @@ export const DEFAULT_SIDEBAR_COLLAPSED = false;
 export const DEFAULT_SIDEBAR_PROPS: Partial<SidebarProps> = {
   template: DEFAULT_SIDEBAR_TEMPLATE,
   position: DEFAULT_SIDEBAR_POSITION,
-  collapsed: DEFAULT_SIDEBAR_COLLAPSED,
   items: [],
   menus: [],
 };
