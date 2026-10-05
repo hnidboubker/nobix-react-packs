@@ -455,6 +455,64 @@ All gates must pass before `READY_FOR_COMMIT`.
 
 ---
 
+## Automated 6-Phase Orchestrator Workflow
+
+Fast-track complete development from issue to commit:
+
+```
+/react-frontend-orchestrator-workflow [issue_number]
+   ↓
+1️⃣ CODING (cc-react-frontend-expert-agent)
+   Create React/TypeScript/Tailwind components
+   Requirement: npm run build MUST PASS
+   ↓
+2️⃣ INSPECTING (cc-react-frontend-inspector-agent)
+   Architecture/TypeScript/a11y/performance audit
+   Blocks if critical anomalies found
+   ↓
+3️⃣ TESTING (cx-react-frontend-tests-agent)
+   Vitest + React Testing Library
+   Requirements: 10+ tests, 70%+ coverage, all pass
+   ↓
+4️⃣ REVIEW (cx-react-frontend-review-agent)
+   Final approval: approved | rejected
+   If rejected: auto-return to Coding
+   ↓
+5️⃣ VALIDATE (cc-react-frontend-validate-agent)
+   Requirements verification
+   ↓
+⏸️ CONFIRMATION (YOU)
+   Review summary, approve git operations
+   ↓
+6️⃣ FINALIZATION
+   git add . → git commit → git push origin dev
+   (human-controlled Git)
+```
+
+**Automatic Progression:**
+- Each phase completes and automatically continues
+- Blocking conditions trigger loops back to Coding
+- Human confirmation required before git operations
+
+**Blocking Conditions:**
+- Phase 1: Compilation fails
+- Phase 2: Critical anomalies found
+- Phase 3: Tests fail OR coverage < 70%
+- Phase 4: Review rejected
+- Phase 5: Validation failed
+
+On block: Request fixes → Return to Phase 1
+
+**Success Criteria:**
+- ✅ Build passes
+- ✅ No critical anomalies
+- ✅ 10+ tests, 70%+ coverage, all pass
+- ✅ Review approved
+- ✅ Validation passed
+- ✅ User confirms before git
+
+---
+
 ## Branch Strategy
 
 **All phases and features MUST be on `dev` branch:**

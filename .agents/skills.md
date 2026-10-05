@@ -102,10 +102,37 @@ Write comprehensive tests for components and achieve >85% coverage.
 
 ---
 
+## Local Project Skills
+
+### react-frontend-orchestrator-workflow
+
+**Use for:** Automated 6-phase workflow execution
+
+Execute complete automated workflow: Coding → Inspecting → Testing → Review → Validate → Confirmation → Finalization
+
+**Features:**
+- Automatic phase progression
+- Blocking conditions detection
+- Loop on failures (auto-return to Coding)
+- Human-controlled git operations
+- Detailed phase reporting
+
+**Invocation:**
+```bash
+/react-frontend-orchestrator-workflow [issue_number]
+```
+
+Example:
+```bash
+/react-frontend-orchestrator-workflow 4
+```
+
+---
+
 ## Claude Code Built-in Skills
 
 - `/code-review [level]` — Code review
-- `/react-frontend-orchestration` — React workflow
+- `/react-frontend-orchestration` — React workflow (legacy)
 - `/peasypilot-test-generator` — Generate tests
 - `/systematic-debugging` — Debug issues
 - `/brainstorming` — Plan features

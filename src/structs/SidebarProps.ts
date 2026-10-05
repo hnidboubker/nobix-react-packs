@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { SidebarPosition } from "../enums/SidebarPosition";
 import { SidebarTemplate } from "../enums/SidebarTemplate";
 import { SidebarItemProps } from "./SidebarItemProps";
@@ -14,4 +15,10 @@ export interface SidebarProps {
   /** Controlled collapsed state. Omit for uncontrolled. */
   collapsed?: boolean;
   onCollapsedChange?: (collapsed: boolean) => void;
+  /** Default collapsed state for uncontrolled mode. */
+  defaultCollapsed?: boolean;
+  /** Optional header slot content. */
+  header?: ReactNode;
+  /** Optional footer slot content. */
+  footer?: ReactNode;
 }

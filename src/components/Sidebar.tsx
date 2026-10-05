@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { SidebarProps } from "../structs/SidebarProps";
-import { SidebarMenu } from "./SidebarMenu";
-import { SidebarItem } from "./SidebarItem";
+import { DefaultSidebar } from "../templates/DefaultSidebar";
+import { CompactSidebar } from "../templates/CompactSidebar";
+import { FloatingSidebar } from "../templates/FloatingSidebar";
 
 /**
  * Sidebar root. Owns the collapsed state (controlled or uncontrolled).
- * Template layout/styling is wired in Phase 3; for now the selection is
- * exposed as `data-template`.
+ * Delegates layout/styling to template components.
  */
 export function Sidebar({
   items = [],
@@ -16,8 +16,11 @@ export function Sidebar({
   className,
   collapsed,
   onCollapsedChange,
+  defaultCollapsed = false,
+  header,
+  footer,
 }: SidebarProps) {
-  const [internalCollapsed, setInternalCollapsed] = useState(false);
+  const [internalCollapsed, setInternalCollapsed] = useState(defaultCollapsed);
   const isCollapsed = collapsed ?? internalCollapsed;
 
   const toggle = () => {
@@ -26,27 +29,24 @@ export function Sidebar({
     onCollapsedChange?.(next);
   };
 
+  const templates = {
+    default: DefaultSidebar,
+    compact: CompactSidebar,
+    floating: FloatingSidebar,
+  };
+
+  const Template = templates[template as keyof typeof templates] || DefaultSidebar;
+
   return (
-    <nav
+    <Template
+      items={items}
+      menus={menus}
+      position={position}
+      collapsed={isCollapsed}
+      onToggle={toggle}
       className={className}
-      aria-label="Sidebar"
-      data-template={template}
-      data-position={position}
-      data-collapsed={isCollapsed}
-    >
-      <button type="button" aria-expanded={!isCollapsed} onClick={toggle}>
-        {isCollapsed ? "Expand" : "Collapse"}
-      </button>
-      {items.length > 0 && (
-        <ul>
-          {items.map((item) => (
-            <SidebarItem key={item.id} {...item} />
-          ))}
-        </ul>
-      )}
-      {menus.map((menu) => (
-        <SidebarMenu key={menu.id} {...menu} />
-      ))}
-    </nav>
+      header={header}
+      footer={footer}
+    />
   );
 }

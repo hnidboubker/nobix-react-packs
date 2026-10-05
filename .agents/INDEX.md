@@ -44,6 +44,14 @@ Complete index of all governance and workflow files in the `.agents/` directory.
 2. See [`workflows.md`](./workflows.md) → Code Review Workflow
 3. Check [`rules.md`](./rules.md) → Review Criteria
 
+### Fast-Track Full Workflow?
+
+1. See [`SKILLS.md`](./SKILLS.md) → react-frontend-orchestrator-workflow
+2. See [`workflows.md`](./workflows.md) → Automated 6-Phase Orchestrator Workflow
+3. Run `/react-frontend-orchestrator-workflow [issue_number]`
+4. Agents handle all 6 phases automatically
+5. Confirm before git operations (Phase 6)
+
 ### Ready to Commit?
 
 1. See [`workflows.md`](./workflows.md) → Quality Gates
