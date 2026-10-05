@@ -310,6 +310,6 @@ MIT
 ---
 
 **Package:** @nobix-react/sidebar  
-**Version:** 0.1.0  
+**Version:** 1.0.0  
 **Repository:** https://github.com/hnidboubker/nobix-react-packs  
 **Issues:** https://github.com/hnidboubker/nobix-react-packs/issues

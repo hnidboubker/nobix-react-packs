@@ -1,6 +1,6 @@
 {
   "name": "@nobix-react/sidebar",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Customizable React sidebar with Default, Compact and Floating templates.",
   "type": "module",
   "main": "./dist/index.js",
