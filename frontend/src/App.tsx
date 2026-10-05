@@ -1,13 +1,25 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { MainLayout } from './components/layout';
-import { Home } from './pages';
+import { Home, ButtonShowcase, SidebarShowcase, HeaderShowcase, FooterShowcase, LayoutShowcase, Integration } from './pages';
 import './styles/globals.css';
 
 function App() {
   return (
-    <MainLayout>
-      <Home />
-    </MainLayout>
+    <Router>
+      <MainLayout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/components/button" element={<ButtonShowcase />} />
+          <Route path="/components/sidebar" element={<SidebarShowcase />} />
+          <Route path="/components/header" element={<HeaderShowcase />} />
+          <Route path="/components/footer" element={<FooterShowcase />} />
+          <Route path="/components/layout" element={<LayoutShowcase />} />
+          <Route path="/integration" element={<Integration />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
+        </Routes>
+      </MainLayout>
+    </Router>
   );
 }
 

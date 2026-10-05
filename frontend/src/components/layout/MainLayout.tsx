@@ -1,40 +1,73 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Sidebar } from '@nobix-react/sidebar';
-import { Menu, Home, Settings, LogOut } from 'lucide-react';
+import { Menu, Home, BookOpen, Square, Layout as LayoutIcon, Type, Layers } from 'lucide-react';
 import { Header } from './Header';
 import { Footer } from './Footer';
 import { MainLayoutProps } from '../structs/MainLayoutProps';
 
 export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(true);
+  const navigate = useNavigate();
 
   const sidebarItems = [
     {
       id: '1',
-      label: 'Home',
+      label: 'Overview',
       icon: Home,
       href: '/',
     },
     {
       id: '2',
-      label: 'Settings',
-      icon: Settings,
-      href: '/settings',
+      label: 'Button',
+      icon: Square,
+      href: '/components/button',
     },
     {
       id: '3',
-      label: 'Logout',
-      icon: LogOut,
-      href: '/logout',
+      label: 'Sidebar',
+      icon: BookOpen,
+      href: '/components/sidebar',
+    },
+    {
+      id: '4',
+      label: 'Header',
+      icon: Type,
+      href: '/components/header',
+    },
+    {
+      id: '5',
+      label: 'Footer',
+      icon: Type,
+      href: '/components/footer',
+    },
+    {
+      id: '6',
+      label: 'Layout',
+      icon: LayoutIcon,
+      href: '/components/layout',
+    },
+    {
+      id: '7',
+      label: 'Integration',
+      icon: Layers,
+      href: '/integration',
     },
   ];
+
+  const handleNavigation = (href: string) => {
+    navigate(href);
+  };
 
   return (
     <div className="flex min-h-screen bg-slate-50 dark:bg-slate-950">
       {/* Sidebar */}
       <aside className={`transition-all duration-300 ${isOpen ? 'w-64' : 'w-20'}`}>
         <Sidebar
-          items={sidebarItems}
+          items={sidebarItems.map(item => ({
+            ...item,
+            onClick: () => handleNavigation(item.href),
+          }))}
           template="default"
           className={`h-screen ${isOpen ? '' : 'w-20'}`}
         />

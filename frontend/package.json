@@ -5,12 +5,16 @@
   "private": true,
   "dependencies": {
     "@nobix-react/sidebar": "file:../sidebar",
+    "@types/jest": "^30.0.0",
     "lucide-react": "^0.468.0",
     "react": "^19.3.0",
-    "react-dom": "^19.3.0"
+    "react-dom": "^19.3.0",
+    "react-router-dom": "^7.18.4",
+    "web-vitals": "^6.2.3"
   },
   "devDependencies": {
     "@playwright/test": "^1.46.1",
+    "@tailwindcss/postcss": "^4.3.3",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.1.0",
     "@types/node": "^20.14.10",
