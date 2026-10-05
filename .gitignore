@@ -430,3 +430,11 @@ FodyWeavers.xsd
 .nobix-packs/*
 
 .claude/*
+
+# Node / Build
+dist/
+coverage/
+*.tsbuildinfo
+
+# Prettier
+.prettierignore
