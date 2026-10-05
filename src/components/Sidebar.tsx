@@ -19,6 +19,10 @@ export function Sidebar({
   defaultCollapsed = false,
   header,
   footer,
+  headerSlot,
+  footerSlot,
+  itemRenderer,
+  menuRenderer,
 }: SidebarProps) {
   const [internalCollapsed, setInternalCollapsed] = useState(defaultCollapsed);
   const isCollapsed = collapsed ?? internalCollapsed;
@@ -37,6 +41,12 @@ export function Sidebar({
 
   const Template = templates[template as keyof typeof templates] || DefaultSidebar;
 
+  const slotProps = { collapsed: isCollapsed, position, onToggle: toggle };
+  const resolve = <P,>(slot: React.ReactNode | ((p: P) => React.ReactNode), p: P) =>
+    typeof slot === "function" ? slot(p) : slot;
+  const headerContent = headerSlot !== undefined ? resolve(headerSlot, slotProps) : header;
+  const footerContent = footerSlot !== undefined ? resolve(footerSlot, slotProps) : footer;
+
   return (
     <Template
       items={items}
@@ -45,8 +55,10 @@ export function Sidebar({
       collapsed={isCollapsed}
       onToggle={toggle}
       className={className}
-      header={header}
-      footer={footer}
+      header={headerContent}
+      footer={footerContent}
+      itemRenderer={itemRenderer}
+      menuRenderer={menuRenderer}
     />
   );
 }

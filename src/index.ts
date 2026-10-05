@@ -10,5 +10,6 @@ export type { SidebarMenuProps } from "./structs/SidebarMenuProps";
 export type { SidebarItemProps } from "./structs/SidebarItemProps";
 export type { SidebarIconProps } from "./structs/SidebarIconProps";
 export type { SidebarTemplateProps } from "./structs/SidebarTemplateProps";
+export type { HeaderSlotProps, FooterSlotProps } from "./structs/SidebarSlotProps";
 export type { SidebarTemplate } from "./enums/SidebarTemplate";
 export type { SidebarPosition } from "./enums/SidebarPosition";

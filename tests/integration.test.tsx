@@ -73,12 +73,12 @@ describe("FloatingSidebar mobile behavior", () => {
 
   it("anchors to the right on mobile when position is right", () => {
     const { container } = render(<FloatingSidebar {...templateProps({ position: "right" })} />);
-    expect(container.querySelector("aside")?.className).toContain("max-md:right-2");
+    expect(container.querySelector("aside")?.className).toContain("max-md:end-2");
   });
 
   it("anchors to the left on mobile when position is left", () => {
     const { container } = render(<FloatingSidebar {...templateProps({ position: "left" })} />);
-    expect(container.querySelector("aside")?.className).toContain("max-md:left-2");
+    expect(container.querySelector("aside")?.className).toContain("max-md:start-2");
   });
 });
 

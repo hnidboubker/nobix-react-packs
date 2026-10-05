@@ -5,4 +5,6 @@ export interface SidebarMenuProps {
   /** Optional group heading. */
   label?: string;
   items: SidebarItemProps[];
+  /** Optional CSS class to apply to the menu element. */
+  className?: string;
 }

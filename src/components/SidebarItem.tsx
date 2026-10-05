@@ -2,9 +2,9 @@ import { SidebarItemProps } from "../structs/SidebarItemProps";
 import { SidebarIcon } from "./SidebarIcon";
 
 /** A single navigation entry. Disabled items render without an href. */
-export function SidebarItem({ id, label, href, icon, disabled = false, badge }: SidebarItemProps) {
+export function SidebarItem({ id, label, href, icon, disabled = false, badge, className }: SidebarItemProps) {
   return (
-    <li data-item-id={id}>
+    <li data-item-id={id} className={className}>
       <a
         href={disabled ? undefined : href}
         role={disabled ? "link" : undefined}

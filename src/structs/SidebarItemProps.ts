@@ -9,4 +9,6 @@ export interface SidebarItemProps {
   disabled?: boolean;
   /** Optional badge content (count, "new", ...). */
   badge?: ReactNode;
+  /** Optional CSS class to apply to the item element. */
+  className?: string;
 }
