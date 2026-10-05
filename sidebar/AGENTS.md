@@ -80,6 +80,37 @@ All work is organized into **10 Phases** tracked as GitHub issues:
 
 **Master Epic:** [#1 - @projet-example/sidebar Package Development](https://github.com/hnidboubker/nobix-react-packs/issues/1)
 
+## Mandatory React Frontend Workflow
+
+Pour toute tâche concernant le frontend React, le package Sidebar, ses composants,
+templates, tests ou validations, utiliser obligatoirement le skill local
+`.skills/react-frontend-orchestrator-workflow.md`.
+
+Ce skill est l’orchestrateur officiel du projet. Il exécute automatiquement le
+workflow en six phases :
+
+1. **CODING** — implémentation par l’agent frontend et vérification du build ;
+2. **INSPECTING** — contrôle de l’architecture, du TypeScript, de
+   l’accessibilité, des performances et des anomalies ;
+3. **TESTING** — création et exécution des tests Vitest/React Testing Library,
+   avec au moins 10 tests, 70 % de couverture et aucun échec ;
+4. **REVIEW** — revue indépendante du code ;
+5. **VALIDATE** — validation de toutes les exigences et génération d’un résumé
+   complet ;
+6. **FINALIZATION** — opérations Git uniquement après confirmation explicite
+   de l’utilisateur.
+
+Commande d’invocation :
+
+```bash
+/react-frontend-orchestrator-workflow [issue_number]
+```
+
+Le workflow reboucle automatiquement vers l’implémentation lorsqu’une anomalie
+critique, un échec de test, une couverture insuffisante ou un rejet de revue
+est détecté. Ne jamais exécuter les opérations Git de la phase finale sans la
+confirmation explicite de l’utilisateur.
+
 ---
 
 ## Development Commands
