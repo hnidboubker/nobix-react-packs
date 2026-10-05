@@ -438,3 +438,7 @@ coverage/
 
 # Prettier
 .prettierignore
+
+workflows/*
+orchestrators/*
+hooks/*
