@@ -1,22 +1,7 @@
-import { useState } from 'react'
-import { SidebarItem, type SidebarItemProps } from './SidebarItem'
-import { SidebarMenu, type SidebarMenuProps } from './SidebarMenu'
-
-export type SidebarTemplate = 'default' | 'compact' | 'floating'
-export type SidebarPosition = 'left' | 'right'
-
-export interface SidebarProps {
-  /** Top-level items rendered before the menus. */
-  items?: SidebarItemProps[]
-  /** Grouped items. */
-  menus?: SidebarMenuProps[]
-  template?: SidebarTemplate
-  position?: SidebarPosition
-  className?: string
-  /** Controlled collapsed state. Omit for uncontrolled. */
-  collapsed?: boolean
-  onCollapsedChange?: (collapsed: boolean) => void
-}
+import { useState } from "react";
+import { SidebarProps } from "../structs/SidebarProps";
+import { SidebarMenu } from "./SidebarMenu";
+import { SidebarItem } from "./SidebarItem";
 
 /**
  * Sidebar root. Owns the collapsed state (controlled or uncontrolled).
@@ -26,20 +11,20 @@ export interface SidebarProps {
 export function Sidebar({
   items = [],
   menus = [],
-  template = 'default',
-  position = 'left',
+  template = "default",
+  position = "left",
   className,
   collapsed,
   onCollapsedChange,
 }: SidebarProps) {
-  const [internalCollapsed, setInternalCollapsed] = useState(false)
-  const isCollapsed = collapsed ?? internalCollapsed
+  const [internalCollapsed, setInternalCollapsed] = useState(false);
+  const isCollapsed = collapsed ?? internalCollapsed;
 
   const toggle = () => {
-    const next = !isCollapsed
-    if (collapsed === undefined) setInternalCollapsed(next)
-    onCollapsedChange?.(next)
-  }
+    const next = !isCollapsed;
+    if (collapsed === undefined) setInternalCollapsed(next);
+    onCollapsedChange?.(next);
+  };
 
   return (
     <nav
@@ -50,7 +35,7 @@ export function Sidebar({
       data-collapsed={isCollapsed}
     >
       <button type="button" aria-expanded={!isCollapsed} onClick={toggle}>
-        {isCollapsed ? 'Expand' : 'Collapse'}
+        {isCollapsed ? "Expand" : "Collapse"}
       </button>
       {items.length > 0 && (
         <ul>
@@ -63,5 +48,5 @@ export function Sidebar({
         <SidebarMenu key={menu.id} {...menu} />
       ))}
     </nav>
-  )
+  );
 }

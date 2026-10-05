@@ -1,15 +1,9 @@
-import { SidebarItem, type SidebarItemProps } from './SidebarItem'
-
-export interface SidebarMenuProps {
-  id: string
-  /** Optional group heading. */
-  label?: string
-  items: SidebarItemProps[]
-}
+import { SidebarMenuProps } from "../structs/SidebarMenuProps";
+import { SidebarItem } from "./SidebarItem";
 
 /** A group of navigation items with an optional heading. */
 export function SidebarMenu({ id, label, items }: SidebarMenuProps) {
-  const headingId = label ? `${id}-label` : undefined
+  const headingId = label ? `${id}-label` : undefined;
 
   return (
     <section data-menu-id={id} aria-labelledby={headingId}>
@@ -20,5 +14,5 @@ export function SidebarMenu({ id, label, items }: SidebarMenuProps) {
         ))}
       </ul>
     </section>
-  )
+  );
 }
