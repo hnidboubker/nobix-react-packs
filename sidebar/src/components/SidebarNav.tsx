@@ -1,6 +1,6 @@
 import { Fragment } from "react";
-import { SidebarItem } from "./SidebarItem";
-import { SidebarMenu } from "./SidebarMenu";
+import { SidebarItem } from "./SidebarItem.js";
+import { SidebarMenu } from "./SidebarMenu.js";
 import { SidebarNavItemsProps } from "../structs/SidebarNavItemsProps";
 
 /** Shared by all templates: renders top-level items and menus, honoring renderer overrides. */

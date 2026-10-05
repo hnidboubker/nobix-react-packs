@@ -1,0 +1,23 @@
+[     793ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/static/js/bundle.js:21287
+[     853ms] Error: Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):
+SyntaxError
+
+(1:1) G:\MCS\Github\apps\nobix-react-packs\frontend\node_modules\tailwindcss\lib\index.js Unknown word "use strict"
+
+[1m[31m>[39m[22m[90m 1 | [39m[32m"use strict"[39m[33m;[39m
+ [90m   | [39m[1m[31m^[39m[22m
+ [90m 2 | [39mmodule.exports = [36mrequire[39m[36m([39m[32m"./plugin"[39m[36m)[39m[33m;[39m
+ [90m 3 | [39m
+
+    at ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/tailwindcss/lib/index.js (http://localhost:3000/static/js/bundle.js:26855:7)
+    at options.factory (http://localhost:3000/static/js/bundle.js:41048:30)
+    at __webpack_require__ (http://localhost:3000/static/js/bundle.js:40438:32)
+    at fn (http://localhost:3000/static/js/bundle.js:40641:21)
+    at hotRequire (http://localhost:3000/static/js/bundle.js:41031:47)
+    at ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js!./src/index.css (http://localhost:3000/static/js/bundle.js:26310:236)
+    at options.factory (http://localhost:3000/static/js/bundle.js:41048:30)
+    at __webpack_require__ (http://localhost:3000/static/js/bundle.js:40438:32)
+    at fn (http://localhost:3000/static/js/bundle.js:40641:21)
+    at hotRequire (http://localhost:3000/static/js/bundle.js:41031:47)
+[   74972ms] [ERROR] WebSocket connection to 'ws://localhost:3000/ws' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/static/js/bundle.js:23638
+[   77078ms] [ERROR] WebSocket connection to 'ws://localhost:3000/ws' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/static/js/bundle.js:23638

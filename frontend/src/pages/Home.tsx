@@ -2,15 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '../components/common';
 import { Square, BookOpen, Type, LayoutIcon } from 'lucide-react';
-
-interface ComponentItem {
-  id: string;
-  name: string;
-  icon: React.ReactNode;
-  href: string;
-  description: string;
-  variants: number;
-}
+import { ComponentItem } from '@/components/structs/ComponentItem';
 
 export const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -63,9 +55,7 @@ export const Home: React.FC = () => {
       <div className="space-y-16">
         {/* Hero Section */}
         <div className="text-center space-y-6">
-          <h1 className="text-5xl font-bold text-slate-900 dark:text-white">
-            Component Showcase
-          </h1>
+          <h1 className="text-5xl font-bold text-slate-900 dark:text-white">Component Showcase</h1>
           <p className="text-xl text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
             Explore all available components with interactive demos, variants, and code examples.
           </p>
@@ -128,9 +118,12 @@ export const Home: React.FC = () => {
 
         {/* Integration Section */}
         <div className="p-8 bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-900 rounded-lg border border-blue-200 dark:border-slate-700">
-          <h2 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">See Them in Action</h2>
+          <h2 className="text-2xl font-bold mb-4 text-slate-900 dark:text-white">
+            See Them in Action
+          </h2>
           <p className="text-slate-700 dark:text-slate-300 mb-6">
-            Visit our integration example to see how all components work together in a real application.
+            Visit our integration example to see how all components work together in a real
+            application.
           </p>
           <Button variant="primary" onClick={() => navigate('/integration')}>
             View Integration Example

@@ -1,0 +1,84 @@
+[     599ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/static/js/bundle.js:22430
+[     684ms] [ERROR] Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem. @ http://localhost:3000/static/js/bundle.js:3796
+[     699ms] [ERROR] Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem. @ http://localhost:3000/static/js/bundle.js:3796
+[     735ms] TypeError: Cannot read properties of null (reading 'useState')
+    at exports.useState (http://localhost:3000/static/js/bundle.js:4309:31)
+    at Sidebar (http://localhost:3000/static/js/bundle.js:28960:100)
+    at Object.react_stack_bottom_frame (http://localhost:3000/static/js/bundle.js:20441:18)
+    at renderWithHooks (http://localhost:3000/static/js/bundle.js:10208:20)
+    at updateFunctionComponent (http://localhost:3000/static/js/bundle.js:11616:17)
+    at beginWork (http://localhost:3000/static/js/bundle.js:12239:16)
+    at runWithFiberInDEV (http://localhost:3000/static/js/bundle.js:6586:68)
+    at performUnitOfWork (http://localhost:3000/static/js/bundle.js:15149:93)
+    at workLoopSync (http://localhost:3000/static/js/bundle.js:15044:38)
+    at renderRootSync (http://localhost:3000/static/js/bundle.js:15029:7)
+[     722ms] [WARNING] %s
+
+%s
+ An error occurred in the <Sidebar> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:3000/static/js/bundle.js:11284
+[    8293ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/static/js/bundle.js:22430
+[    8359ms] [ERROR] Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem. @ http://localhost:3000/static/js/bundle.js:3796
+[    8365ms] [ERROR] Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem. @ http://localhost:3000/static/js/bundle.js:3796
+[    8373ms] TypeError: Cannot read properties of null (reading 'useState')
+    at exports.useState (http://localhost:3000/static/js/bundle.js:4309:31)
+    at Sidebar (http://localhost:3000/static/js/bundle.js:28960:100)
+    at Object.react_stack_bottom_frame (http://localhost:3000/static/js/bundle.js:20441:18)
+    at renderWithHooks (http://localhost:3000/static/js/bundle.js:10208:20)
+    at updateFunctionComponent (http://localhost:3000/static/js/bundle.js:11616:17)
+    at beginWork (http://localhost:3000/static/js/bundle.js:12239:16)
+    at runWithFiberInDEV (http://localhost:3000/static/js/bundle.js:6586:68)
+    at performUnitOfWork (http://localhost:3000/static/js/bundle.js:15149:93)
+    at workLoopSync (http://localhost:3000/static/js/bundle.js:15044:38)
+    at renderRootSync (http://localhost:3000/static/js/bundle.js:15029:7)
+[    8382ms] [WARNING] %s
+
+%s
+ An error occurred in the <Sidebar> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:3000/static/js/bundle.js:11284
+[  101946ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/static/js/bundle.js:22430
+[  101995ms] [ERROR] Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem. @ http://localhost:3000/static/js/bundle.js:3796
+[  102014ms] [ERROR] Invalid hook call. Hooks can only be called inside of the body of a function component. This could happen for one of the following reasons:
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+See https://react.dev/link/invalid-hook-call for tips about how to debug and fix this problem. @ http://localhost:3000/static/js/bundle.js:3796
+[  102053ms] TypeError: Cannot read properties of null (reading 'useState')
+    at exports.useState (http://localhost:3000/static/js/bundle.js:4309:31)
+    at Sidebar (http://localhost:3000/static/js/bundle.js:28960:100)
+    at Object.react_stack_bottom_frame (http://localhost:3000/static/js/bundle.js:20441:18)
+    at renderWithHooks (http://localhost:3000/static/js/bundle.js:10208:20)
+    at updateFunctionComponent (http://localhost:3000/static/js/bundle.js:11616:17)
+    at beginWork (http://localhost:3000/static/js/bundle.js:12239:16)
+    at runWithFiberInDEV (http://localhost:3000/static/js/bundle.js:6586:68)
+    at performUnitOfWork (http://localhost:3000/static/js/bundle.js:15149:93)
+    at workLoopSync (http://localhost:3000/static/js/bundle.js:15044:38)
+    at renderRootSync (http://localhost:3000/static/js/bundle.js:15029:7)
+[  102061ms] [WARNING] %s
+
+%s
+ An error occurred in the <Sidebar> component. Consider adding an error boundary to your tree to customize error handling behavior.
+Visit https://react.dev/link/error-boundaries to learn more about error boundaries. @ http://localhost:3000/static/js/bundle.js:11284
+[  108318ms] [ERROR] WebSocket connection to 'ws://localhost:3000/ws' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/static/js/bundle.js:24511
+[  110364ms] [ERROR] WebSocket connection to 'ws://localhost:3000/ws' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/static/js/bundle.js:24511
+[  114411ms] [ERROR] WebSocket connection to 'ws://localhost:3000/ws' failed: Error in connection establishment: net::ERR_CONNECTION_REFUSED @ http://localhost:3000/static/js/bundle.js:24511

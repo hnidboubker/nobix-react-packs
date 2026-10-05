@@ -1,5 +1,5 @@
-import { SidebarTemplateProps } from "../structs/SidebarTemplateProps";
-import { SidebarNavItems } from "../components/SidebarNav";
+import { SidebarTemplateProps } from "../structs/SidebarTemplateProps.js";
+import { SidebarNavItems } from "../components/SidebarNav.js";
 
 // Items/menus are styled through descendant selectors so the Phase 2
 // components stay untouched. Labels become sr-only (not hidden) when collapsed.

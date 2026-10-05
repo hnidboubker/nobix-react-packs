@@ -1,0 +1,24 @@
+[     838ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/static/js/bundle.js:21164
+[     901ms] Error: Cannot find module './components/Sidebar'
+    at webpackMissingModule (http://localhost:3000/static/js/bundle.js:27647:52)
+    at ../sidebar/dist/index.js (http://localhost:3000/static/js/bundle.js:27647:147)
+    at options.factory (http://localhost:3000/static/js/bundle.js:39267:30)
+    at __webpack_require__ (http://localhost:3000/static/js/bundle.js:38657:32)
+    at fn (http://localhost:3000/static/js/bundle.js:38860:21)
+    at hotRequire (http://localhost:3000/static/js/bundle.js:39250:47)
+    at ./src/components/layout/MainLayout.tsx (http://localhost:3000/static/js/bundle.js:548:78)
+    at options.factory (http://localhost:3000/static/js/bundle.js:39267:30)
+    at __webpack_require__ (http://localhost:3000/static/js/bundle.js:38657:32)
+    at fn (http://localhost:3000/static/js/bundle.js:38860:21)
+[  410615ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/static/js/bundle.js:22309
+[  410652ms] Error: Cannot find module '../templates/DefaultSidebar'
+    at webpackMissingModule (http://localhost:3000/static/js/bundle.js:28793:52)
+    at ../sidebar/dist/components/Sidebar.js (http://localhost:3000/static/js/bundle.js:28793:154)
+    at options.factory (http://localhost:3000/static/js/bundle.js:40469:30)
+    at __webpack_require__ (http://localhost:3000/static/js/bundle.js:39859:32)
+    at fn (http://localhost:3000/static/js/bundle.js:40062:21)
+    at hotRequire (http://localhost:3000/static/js/bundle.js:40452:47)
+    at ./src/components/layout/MainLayout.tsx (http://localhost:3000/static/js/bundle.js:548:78)
+    at options.factory (http://localhost:3000/static/js/bundle.js:40469:30)
+    at __webpack_require__ (http://localhost:3000/static/js/bundle.js:39859:32)
+    at fn (http://localhost:3000/static/js/bundle.js:40062:21)

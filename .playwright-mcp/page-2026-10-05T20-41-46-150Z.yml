@@ -1,0 +1,12 @@
+- iframe [ref=e1]:
+  - generic [ref=f1e2]:
+    - generic [ref=f1e3]: "Compiled with problems:"
+    - button "Dismiss" [ref=f1e4] [cursor=pointer]: ×
+    - generic [ref=f1e6]:
+      - generic [ref=f1e7] [cursor=pointer]: ERROR in ./node_modules/tailwindcss/lib/index.js (./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/tailwindcss/lib/index.js)
+      - generic [ref=f1e8]:
+        - text: "Module build failed (from ./node_modules/postcss-loader/dist/cjs.js): SyntaxError (1:1) G:\\MCS\\Github\\apps\\nobix-react-packs\\frontend\\node_modules\\tailwindcss\\lib\\index.js Unknown word \"use strict\""
+        - generic [ref=f1e9]: ">"
+        - text: 1 | "use strict"; |
+        - generic [ref=f1e10]: ^
+        - text: 2 | module.exports = require("./plugin"); 3 |

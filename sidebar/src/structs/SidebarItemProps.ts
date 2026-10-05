@@ -11,4 +11,6 @@ export interface SidebarItemProps {
   badge?: ReactNode;
   /** Optional CSS class to apply to the item element. */
   className?: string;
+  /** Optional click handler */
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
 }

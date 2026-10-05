@@ -1,8 +1,8 @@
-import { SidebarItemProps } from "../structs/SidebarItemProps";
-import { SidebarIcon } from "./SidebarIcon";
+import { SidebarItemProps } from "../structs/SidebarItemProps.js";
+import { SidebarIcon } from "./SidebarIcon.js";
 
 /** A single navigation entry. Disabled items render without an href. */
-export function SidebarItem({ id, label, href, icon, disabled = false, badge, className }: SidebarItemProps) {
+export function SidebarItem({ id, label, href, icon, disabled = false, badge, className, onClick }: SidebarItemProps) {
   return (
     <li data-item-id={id} className={className}>
       <a
@@ -10,6 +10,7 @@ export function SidebarItem({ id, label, href, icon, disabled = false, badge, cl
         role={disabled ? "link" : undefined}
         aria-disabled={disabled || undefined}
         tabIndex={disabled ? -1 : undefined}
+        onClick={onClick}
       >
         {icon && <SidebarIcon icon={icon} />}
         <span>{label}</span>

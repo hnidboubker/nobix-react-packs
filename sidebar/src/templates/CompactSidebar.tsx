@@ -1,5 +1,5 @@
-import { SidebarTemplateProps } from "../structs/SidebarTemplateProps";
-import { SidebarNavItems } from "../components/SidebarNav";
+import { SidebarTemplateProps } from "../structs/SidebarTemplateProps.js";
+import { SidebarNavItems } from "../components/SidebarNav.js";
 
 const nav =
   "flex-1 space-y-2 overflow-y-auto p-1 " +

@@ -1,0 +1,23 @@
+[     270ms] [INFO] %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold @ http://localhost:3000/static/js/bundle.js:22309
+[     300ms] Error: Module build failed (from ./node_modules/postcss-loader/dist/cjs.js):
+Error: It looks like you're trying to use `tailwindcss` directly as a PostCSS plugin. The PostCSS plugin has moved to a separate package, so to continue using Tailwind CSS with PostCSS you'll need to install `@tailwindcss/postcss` and update your PostCSS configuration.
+    at mt (./node_modules/tailwindcss/dist/lib.js:38:1643)
+    at LazyResult.runOnRoot (./node_modules/postcss/lib/lazy-result.js:367:16)
+    at LazyResult.runAsync (./node_modules/postcss/lib/lazy-result.js:296:26)
+    at LazyResult.async (./node_modules/postcss/lib/lazy-result.js:198:30)
+    at LazyResult.then (./node_modules/postcss/lib/lazy-result.js:455:17)
+    at mt (./node_modules/tailwindcss/dist/lib.js:38:1643)
+    at LazyResult.runOnRoot (./node_modules/postcss/lib/lazy-result.js:367:16)
+    at LazyResult.runAsync (./node_modules/postcss/lib/lazy-result.js:296:26)
+    at LazyResult.async (./node_modules/postcss/lib/lazy-result.js:198:30)
+    at LazyResult.then (./node_modules/postcss/lib/lazy-result.js:455:17)
+    at ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[5].use[2]!./node_modules/source-map-loader/dist/cjs.js!./src/styles/globals.css (http://localhost:3000/static/js/bundle.js:27053:7)
+    at options.factory (http://localhost:3000/static/js/bundle.js:41142:30)
+    at __webpack_require__ (http://localhost:3000/static/js/bundle.js:40532:32)
+    at fn (http://localhost:3000/static/js/bundle.js:40735:21)
+    at hotRequire (http://localhost:3000/static/js/bundle.js:41125:47)
+    at ./src/styles/globals.css (http://localhost:3000/static/js/bundle.js:27353:253)
+    at options.factory (http://localhost:3000/static/js/bundle.js:41142:30)
+    at __webpack_require__ (http://localhost:3000/static/js/bundle.js:40532:32)
+    at fn (http://localhost:3000/static/js/bundle.js:40735:21)
+    at hotRequire (http://localhost:3000/static/js/bundle.js:41125:47)

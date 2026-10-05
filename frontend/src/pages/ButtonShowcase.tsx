@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from '../components/common';
-
-type ButtonVariant = 'primary' | 'secondary' | 'danger';
-type ButtonSize = 'sm' | 'md' | 'lg';
+import { ButtonVariant } from '@/components/enums/ButtonVariant';
+import { ButtonSize } from '@/components/enums/ButtonSize';
 
 export const ButtonShowcase: React.FC = () => {
   const [variant, setVariant] = useState<ButtonVariant>('primary');
@@ -35,8 +34,10 @@ export const ButtonShowcase: React.FC = () => {
               onChange={(e) => setVariant(e.target.value as ButtonVariant)}
               className="w-full px-3 py-2 border border-slate-300 dark:border-slate-700 rounded bg-white dark:bg-slate-800"
             >
-              {variants.map(v => (
-                <option key={v} value={v}>{v}</option>
+              {variants.map((v) => (
+                <option key={v} value={v}>
+                  {v}
+                </option>
               ))}
             </select>
           </div>
@@ -48,8 +49,10 @@ export const ButtonShowcase: React.FC = () => {
               onChange={(e) => setSize(e.target.value as ButtonSize)}
               className="w-full px-3 py-2 border border-slate-300 dark:border-slate-700 rounded bg-white dark:bg-slate-800"
             >
-              {sizes.map(s => (
-                <option key={s} value={s}>{s}</option>
+              {sizes.map((s) => (
+                <option key={s} value={s}>
+                  {s}
+                </option>
               ))}
             </select>
           </div>
@@ -77,7 +80,7 @@ export const ButtonShowcase: React.FC = () => {
 
         <div className="mt-6 p-4 bg-slate-100 dark:bg-slate-800 rounded font-mono text-sm overflow-auto">
           <pre className="text-slate-900 dark:text-slate-100">
-{`<Button
+            {`<Button
   variant="${variant}"
   size="${size}"
   disabled={${disabled}}
@@ -93,23 +96,19 @@ export const ButtonShowcase: React.FC = () => {
         <h2 className="text-2xl font-bold mb-6">All Variants (36 Total)</h2>
 
         <div className="space-y-12">
-          {variants.map(v => (
+          {variants.map((v) => (
             <div key={v}>
               <h3 className="text-xl font-semibold mb-4 capitalize">{v} Variant</h3>
               <div className="space-y-6">
-                {sizes.map(s => (
+                {sizes.map((s) => (
                   <div key={s}>
                     <p className="text-sm font-medium text-slate-600 dark:text-slate-400 mb-3 capitalize">
                       Size: {s}
                     </p>
                     <div className="flex flex-wrap gap-4 p-4 bg-slate-50 dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-800">
-                      {states.map(state => (
+                      {states.map((state) => (
                         <div key={state.label} className="flex flex-col items-center gap-2">
-                          <Button
-                            variant={v}
-                            size={s}
-                            disabled={state.disabled}
-                          >
+                          <Button variant={v} size={s} disabled={state.disabled}>
                             {state.label}
                           </Button>
                           <span className="text-xs text-slate-500 dark:text-slate-400">
@@ -142,7 +141,9 @@ export const ButtonShowcase: React.FC = () => {
             <tbody>
               <tr className="border-b border-slate-200 dark:border-slate-700">
                 <td className="py-2 px-4 font-mono text-blue-600">variant</td>
-                <td className="py-2 px-4 font-mono text-slate-600">'primary' | 'secondary' | 'danger'</td>
+                <td className="py-2 px-4 font-mono text-slate-600">
+                  'primary' | 'secondary' | 'danger'
+                </td>
                 <td className="py-2 px-4 font-mono">'primary'</td>
                 <td className="py-2 px-4">Button style variant</td>
               </tr>

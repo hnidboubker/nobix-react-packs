@@ -1,0 +1,93 @@
+- generic [ref=f6e3]:
+  - complementary [ref=f6e4]:
+    - complementary [ref=f6e5]:
+      - button "Collapse" [expanded] [ref=f6e7]
+      - navigation "Sidebar" [ref=f6e8]:
+        - list [ref=f6e9]:
+          - listitem [ref=f6e10]:
+            - link "Overview" [ref=f6e11] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f6e16]:
+            - link "Button" [ref=f6e17] [cursor=pointer]:
+              - /url: /components/button
+          - listitem [ref=f6e21]:
+            - link "Sidebar" [ref=f6e22] [cursor=pointer]:
+              - /url: /components/sidebar
+          - listitem [ref=f6e26]:
+            - link "Header" [ref=f6e27] [cursor=pointer]:
+              - /url: /components/header
+          - listitem [ref=f6e31]:
+            - link "Footer" [ref=f6e32] [cursor=pointer]:
+              - /url: /components/footer
+          - listitem [ref=f6e36]:
+            - link "Layout" [ref=f6e37] [cursor=pointer]:
+              - /url: /components/layout
+          - listitem [ref=f6e41]:
+            - link "Integration" [ref=f6e42] [cursor=pointer]:
+              - /url: /integration
+  - generic [ref=f6e48]:
+    - banner [ref=f6e49]:
+      - navigation [ref=f6e50]:
+        - heading "Frontend" [level=1] [ref=f6e51]
+        - list [ref=f6e52]:
+          - listitem [ref=f6e53]:
+            - link "Home" [ref=f6e54] [cursor=pointer]:
+              - /url: /
+          - listitem [ref=f6e55]:
+            - link "About" [ref=f6e56] [cursor=pointer]:
+              - /url: /about
+    - button "Toggle sidebar" [ref=f6e57]
+    - main [ref=f6e59]:
+      - main [ref=f6e60]:
+        - generic [ref=f6e61]:
+          - generic [ref=f6e62]:
+            - heading "Component Showcase" [level=1] [ref=f6e63]
+            - paragraph [ref=f6e64]: Explore all available components with interactive demos, variants, and code examples.
+            - button "Explore Components" [ref=f6e65]
+          - generic [ref=f6e66]:
+            - generic [ref=f6e67]:
+              - generic [ref=f6e68]: "8"
+              - generic [ref=f6e69]: Components
+            - generic [ref=f6e70]:
+              - generic [ref=f6e71]: "36"
+              - generic [ref=f6e72]: Button Variants
+            - generic [ref=f6e73]:
+              - generic [ref=f6e74]: 100%
+              - generic [ref=f6e75]: Responsive
+            - generic [ref=f6e76]:
+              - generic [ref=f6e77]: Dark
+              - generic [ref=f6e78]: Mode Ready
+          - generic [ref=f6e79]:
+            - heading "Available Components" [level=2] [ref=f6e80]
+            - generic [ref=f6e81]:
+              - generic [ref=f6e82]:
+                - generic [ref=f6e83]: 36 variants
+                - heading "Button" [level=3] [ref=f6e88]
+                - paragraph [ref=f6e89]: Versatile action button with multiple variants, sizes, and states
+                - button "View Component" [ref=f6e90]
+              - generic [ref=f6e91]:
+                - generic [ref=f6e92]: 9 variants
+                - heading "Sidebar" [level=3] [ref=f6e97]
+                - paragraph [ref=f6e98]: Navigation sidebar with multiple templates and responsive behavior
+                - button "View Component" [ref=f6e99]
+              - generic [ref=f6e100]:
+                - generic [ref=f6e101]: 1 variant
+                - heading "Header" [level=3] [ref=f6e106]
+                - paragraph [ref=f6e107]: Top navigation bar with sticky positioning
+                - button "View Component" [ref=f6e108]
+              - generic [ref=f6e109]:
+                - generic [ref=f6e110]: 1 variant
+                - heading "Footer" [level=3] [ref=f6e115]
+                - paragraph [ref=f6e116]: Footer section for page bottom with responsive layout
+                - button "View Component" [ref=f6e117]
+              - generic [ref=f6e118]:
+                - generic [ref=f6e119]: 2 variants
+                - heading "MainLayout" [level=3] [ref=f6e124]
+                - paragraph [ref=f6e125]: Main layout wrapper combining all components
+                - button "View Component" [ref=f6e126]
+          - generic [ref=f6e127]:
+            - heading "See Them in Action" [level=2] [ref=f6e128]
+            - paragraph [ref=f6e129]: Visit our integration example to see how all components work together in a real application.
+            - button "View Integration Example" [ref=f6e130]
+    - contentinfo [ref=f6e131]:
+      - paragraph [ref=f6e133]: © 2026 Frontend App. All rights reserved.

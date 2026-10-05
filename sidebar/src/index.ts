@@ -1,8 +1,8 @@
 // Core components
-export { Sidebar } from "./components/Sidebar";
-export { SidebarMenu } from "./components/SidebarMenu";
-export { SidebarItem } from "./components/SidebarItem";
-export { SidebarIcon } from "./components/SidebarIcon";
+export { Sidebar } from "./components/Sidebar.js";
+export { SidebarMenu } from "./components/SidebarMenu.js";
+export { SidebarItem } from "./components/SidebarItem.js";
+export { SidebarIcon } from "./components/SidebarIcon.js";
 
 // Types (public API)
 export type { SidebarProps } from "./structs/SidebarProps";

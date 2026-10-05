@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { MainLayout } from './components/layout';
 import { Home, ButtonShowcase, SidebarShowcase, HeaderShowcase, FooterShowcase, LayoutShowcase, Integration } from './pages';
 import './styles/globals.css';
+import './index.css';
 
 function App() {
   return (

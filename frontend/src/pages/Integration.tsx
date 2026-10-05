@@ -13,11 +13,13 @@ export const Integration: React.FC = () => {
       <section className="mb-16 p-8 bg-white dark:bg-slate-900 rounded-lg border border-slate-200 dark:border-slate-800">
         <h2 className="text-2xl font-bold mb-6">Complete Dashboard Example</h2>
 
-        <div className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-lg border border-slate-200 dark:border-slate-700">
+        <div className="bg-linear-to-r from-blue-50 to-indigo-50 dark:from-slate-800 dark:to-slate-900 p-8 rounded-lg border border-slate-200 dark:border-slate-700">
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-semibold mb-3">Dashboard Header</h3>
-              <p className="text-slate-600 dark:text-slate-400 mb-4">Welcome to the component demo! Use the sidebar to explore all available components.</p>
+              <p className="text-slate-600 dark:text-slate-400 mb-4">
+                Welcome to the component demo! Use the sidebar to explore all available components.
+              </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -49,7 +51,7 @@ export const Integration: React.FC = () => {
         <h2 className="text-2xl font-bold mb-6">Typical Integration Pattern</h2>
         <div className="bg-slate-100 dark:bg-slate-800 p-6 rounded font-mono text-sm overflow-auto">
           <pre className="text-slate-900 dark:text-slate-100">
-{`import { MainLayout } from './components/layout';
+            {`import { MainLayout } from './components/layout';
 import { Button } from './components/common';
 
 export function App() {
@@ -77,7 +79,7 @@ export function App() {
         <h2 className="text-2xl font-bold mb-6">Component Hierarchy</h2>
         <div className="bg-slate-50 dark:bg-slate-800 p-6 rounded font-mono text-sm overflow-auto">
           <pre className="text-slate-900 dark:text-slate-100">
-{`App
+            {`App
 ├── Router (React Router)
 ├── MainLayout
 │   ├── Sidebar (@nobix-react/sidebar)

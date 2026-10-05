@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { SidebarProps } from "../structs/SidebarProps";
-import { DefaultSidebar } from "../templates/DefaultSidebar";
-import { CompactSidebar } from "../templates/CompactSidebar";
-import { FloatingSidebar } from "../templates/FloatingSidebar";
+import { SidebarProps } from "../structs/SidebarProps.js";
+import { DefaultSidebar } from "../templates/DefaultSidebar.js";
+import { CompactSidebar } from "../templates/CompactSidebar.js";
+import { FloatingSidebar } from "../templates/FloatingSidebar.js";
 
 /**
  * Sidebar root. Owns the collapsed state (controlled or uncontrolled).

@@ -1,6 +1,6 @@
 import { useId } from "react";
-import { SidebarMenuProps } from "../structs/SidebarMenuProps";
-import { SidebarItem } from "./SidebarItem";
+import { SidebarMenuProps } from "../structs/SidebarMenuProps.js";
+import { SidebarItem } from "./SidebarItem.js";
 
 /** A group of navigation items with an optional heading. */
 export function SidebarMenu({ id, label, items, className }: SidebarMenuProps) {
