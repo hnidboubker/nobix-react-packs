@@ -254,6 +254,26 @@ Use the abstract type: `React.ComponentType<{ className?: string }>`
 
 ---
 
+## .agents/ Files
+
+Complete index of all governance and workflow files:
+
+- **[`.agents/INDEX.md`](.agents/INDEX.md)** — Start here for complete navigation
+- **[`.agents/SKILLS.md`](.agents/SKILLS.md)** — Available agents and skills
+- **[`.agents/workflows.md`](.agents/workflows.md)** — Development workflows
+- **[`.agents/rules.md`](.agents/rules.md)** — Guidelines and standards
+
+**First time?** Read in order: INDEX → SKILLS → workflows → rules
+
+---
+
+## Session Continuity
+
+- **[`HANDOFF.md`](./HANDOFF.md)** — Session status and next steps (auto-updated)
+- Auto-created at end of each session for seamless handoff
+
+---
+
 ## References
 
 - **Detailed Architecture:** `.nobix-packs/epic-nobix.md` (sections 1-25)

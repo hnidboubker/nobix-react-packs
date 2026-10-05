@@ -147,6 +147,26 @@ npm publish --access public
 
 ---
 
+## .agents/ Files (Complete Governance)
+
+Navigate all workflow and skill files:
+
+- **[`.agents/INDEX.md`](.agents/INDEX.md)** — Complete index and navigation
+- **[`.agents/SKILLS.md`](.agents/SKILLS.md)** — React agents and skills available
+- **[`.agents/workflows.md`](.agents/workflows.md)** — 10-phase workflow + processes
+- **[`.agents/rules.md`](.agents/rules.md)** — Quality standards and guidelines
+
+**Start with:** INDEX.md → choose your task → SKILLS.md → workflows.md
+
+---
+
+## Session Continuity
+
+- **[`HANDOFF.md`](./HANDOFF.md)** — Automatic session handoff document
+- Updated at end of each session with status and next steps
+
+---
+
 ## References
 
 - **Detailed Architecture:** `.nobix-packs/epic-nobix.md`
