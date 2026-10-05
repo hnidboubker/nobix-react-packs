@@ -3,10 +3,7 @@ import { Sidebar } from '@nobix-react/sidebar';
 import { Menu, Home, Settings, LogOut } from 'lucide-react';
 import { Header } from './Header';
 import { Footer } from './Footer';
-
-interface MainLayoutProps {
-  children: React.ReactNode;
-}
+import { MainLayoutProps } from '../structs/MainLayoutProps';
 
 export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(true);
@@ -56,9 +53,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
           <Menu size={20} />
         </button>
 
-        <main className="flex-1 overflow-y-auto">
-          {children}
-        </main>
+        <main className="flex-1 overflow-y-auto">{children}</main>
 
         <Footer />
       </div>
